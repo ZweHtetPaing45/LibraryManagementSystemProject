@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes">
+  <title>Library Management System</title>
+  <!--all css link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="fontawsome/css/all.min.css">
+  <link rel="stylesheet" href="fontawsome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+
+<body>
+
+  <!-- dashboard area start -->
+  <section class="dashboard_area">
+    <div class="container">
+      <div class="control_sidebar_menu text-start d-xl-none">
+        <button>
+          <i class="fas fa-bars"></i> Menu
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 mobile_dashboard_sidebar">
+          <div class="dashboard_left_sidebar">
+            <div class="close_dashboard_sidebar d-xl-none">
+              <button>
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="menus">
+              <ul class="list-unstyled">
+
+                <li>
+                  <a href="/">
+                  <i class="fas fa-book"></i>
+                    home
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/admin_tho">
+                  <i class="fas fa-book"></i>
+                    နည်းပညာ
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_two">
+                    <i class="fas fa-book"></i>
+                    နိုင်ငံခြားဘာသာစကား
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_three">
+                    <i class="fas fa-book"></i>
+                    ကျန်းမာရေး
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_four">
+                    <i class="fas fa-book"></i>
+                    စီးပွားရေး
+                  </a>
+                </li>
+                <li class="active">
+                  <a href="/admin_five">
+                  <i class="fas fa-book"></i>
+                    စုံထောက်ဝတ္ထု
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_six">
+                    <i class="fas fa-book"></i>
+                    ရုပ်ပြကာတွန့်
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_seven">
+                  <i class="fas fa-book"></i>
+                    ဟာသ
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_eight">
+                  <i class="fas fa-book"></i>
+                    စိုက်ပျိုးရေး
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_nine">
+                    <i class="fas fa-book"></i>
+                    ဘာသာပြန်
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin_ten">
+                    <i class="fas fa-book"></i>
+                    ဘာသာရေး
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-12">
+          <div class="dashboard_right_content">
+            <div class="advance_search">
+              
+                <div class="search_widget mb-4">
+                
+                  <div class="search_box__ mb-2">
+                    <div class="search_field">
+                      <div class="d-flex align-items-center">
+                        <div class="dropdowns">
+                      
+                        </div>
+                      
+                </div>
+                <div class="search_widget mb-4">
+
+
+
+                  <div class="search_box__ mb-2">
+                    <div class="row g-4">
+                      
+                        <form action="/admin_five" method="post" enctype="multipart/form-data">
+                            <label for="pdf" class="form-label">PDF file</label>
+                            <input type="file" id="pdf" class="form-control" name="file" accept="application/pdf" requested><br>
+                            <div class="d-flex justify-content-end">
+                              <button class="btn btn-primary">add</button>
+                            </div>
+                        </form>
+
+
+                        <div th:each="five : ${fives}">
+                        <div class="d-flex justify-content-between">
+                          <div th:text="${five.name}">PDF Name</div>
+                          <!-- <embed th:src="@{'/pdf/view/' + ${tho.id}}" type="application/pdf" width="300" height="400"/> -->
+                          <a th:href="@{'pdf/five_view/' +${five.id}}" target="_blank">View Full</a>
+                          <a th:href="@{'/pdf/five_delete/' + ${five.id}}" class="btn btn-danger" onclick="return confirm('This pdf is delete')"><i class="bi bi-trash3"></i>delete</a>
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- all js link -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
