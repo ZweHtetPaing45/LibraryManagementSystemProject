@@ -12,7 +12,7 @@ services:
     envVars:
       - key: DB_URL
         fromDatabase:
-          name: zwelibrary_ocg0
+          name: zwelibrary_ocg0_6203
           property: connectionString
       - key: DB_USER
         fromDatabase:
@@ -25,5 +25,5 @@ services:
 
 databases:
   - name: library
-    databaseName: zwelibrary_ocg0
+    databaseName: zwelibrary_ocg0_6203
     user: zwelibrary_user
